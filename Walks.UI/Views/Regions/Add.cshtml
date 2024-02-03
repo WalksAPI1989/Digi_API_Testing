@@ -1,0 +1,54 @@
+﻿@model Walks.UI.Models.AddRegionViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1 class="mt-3">Add Region</h1>
+
+        <form method="post">
+
+            <div class="mt-3">
+                <label class="form-label">Code</label>
+                <input type="text" class="form-control" asp-for="Code" />
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+
+            <div class="mt-3 mb-3">
+                <label class="form-label">Image URL</label>
+                <input type="text" class="form-control" asp-for="RegionImageUrl" />
+            </div>
+
+            <div class="w3-section d-flex justify-content-between align-items-center">
+                <button type="submit" class="btn btn-primary">Save</button>
+                <a href="@Url.Action("Index", "Regions")" class="btn btn-info">Back to List</a>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@model Walks.UI.Models.DTO.RegionDto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1 class="mt-3">Edit Region</h1>
+
+    @if (Model is not null)
+    {
+        <form method="post">
+
+            <div class="mt-3">
+                <label class="form-label">Id</label>
+                <input type="text" class="form-control" asp-for="Id" readonly />
+            </div>
+            <div class="mt-3">
+                <label class="form-label">Code</label>
+                <input type="text" class="form-control" asp-for="Code" />
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Name</label>
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+
+            <div class="mt-3">
+                <label class="form-label">Image URL</label>
+                <input type="text" class="form-control" asp-for="RegionImageUrl" />
+            </div>
+
+            <div class="w3-section mt-3 d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Save</button>
+
+                <a href="@Url.Action("Index", "Regions")" class="btn btn-info">Back to List</a>
+            </div>
+
+        </form>
+    }
+
+</body>
+</html>

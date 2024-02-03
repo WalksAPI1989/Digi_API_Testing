@@ -1,0 +1,52 @@
+﻿@model Walks.UI.Models.DTO.RegionDto
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body {
+            padding-top: 50px;
+        }
+
+        .privacy-section {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <h1 class="display-4 mb-4">Patch Region</h1>
+
+        <form method="post" asp-controller="Regions" asp-action="Patch">
+            <input type="hidden" asp-for="Id" />
+
+            <div class="form-group mb-3">
+                <label for="Code">Code</label>
+                <input asp-for="Code" class="form-control" id="Code" />
+            </div>
+
+            <div class="form-group mb-3">
+                <label for="Name">Name</label>
+                <input asp-for="Name" class="form-control" id="Name" />
+            </div>
+
+            <div class="form-group mb-4">
+                <label for="RegionImageUrl">Region Image URL</label>
+                <input asp-for="RegionImageUrl" class="form-control" id="RegionImageUrl" />
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center w3-margin-bottom">
+                <button type="submit" class="btn btn-primary">Patch Region</button>
+                <a asp-controller="Regions" asp-action="Index" class="btn btn-info">Back to List</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
